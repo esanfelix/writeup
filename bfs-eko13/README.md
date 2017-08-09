@@ -40,7 +40,7 @@ As you can see int he comments, we get one extra byte than we smash. I used this
 
 The leaked stack cookie is used to bypass the checks, the return address to adjust our ROP chain, and the socket value for process continuation.
 
-I first used a simple ROPChain that would setup ecx and call system, but then decided to go another route:
+I first used a simple ROP chain that would setup ecx and call system, but then decided to go another route:
 
 * Use a write gadget to backdoor the functions[] table with system()
 * Return to the main loop with the correct socket value
